@@ -67,6 +67,7 @@ def check_answer(data: GuessRequest, db: Session = Depends(get_db)):
 
     return {
         "correct": correct,
+        "correct_ans": place.city,
         "fun_fact": random.choice(place.fun_fact)
     }
 
