@@ -4,9 +4,20 @@ from api.database import get_db
 from api.models import PlaceData, User
 from sqlalchemy.sql import func
 from fastapi import HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 import random
 
 app = FastAPI()
+
+
+# Allow requests from all origins (not recommended for production)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Change this to your frontend domain in production
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all HTTP methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allow all headers
+)
 
 
 # Get Question from this API
