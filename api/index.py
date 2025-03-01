@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
-from database import get_db
-from models import PlaceData, User
+from api.database import get_db
+from api.models import PlaceData, User
 from sqlalchemy.sql import func
 from fastapi import HTTPException
 import random
